@@ -3,158 +3,43 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sunday Funday | Heladería</title>
-  <meta name="description" content="Sunday Funday: helados artesanales, coloridos y deliciosos. Conoce nuestra heladería y contáctanos." />
+  <title>Sunday Funday</title>
+  <meta name="description" content="Sunday Funday — Tus días con sabor a helado." />
+
+  <!-- Montserrat (includes ExtraLight 200) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <header class="header">
-    <div class="container">
-      <nav class="nav">
-        <a class="brand" href="index.html" aria-label="Sunday Funday - Inicio">
-          <div class="logo-badge" aria-hidden="true"></div>
-          <span>Sunday Funday</span>
-        </a>
+  <main class="hero">
+    <div class="content">
+      <img
+        src="assets/logo.png"
+        alt="Sunday Funday"
+        class="logo animate-logo"
+      />
 
-        <div class="nav-links">
-          <a class="active" href="index.html">Inicio & Contacto</a>
-          <a href="productos.html">Productos</a>
-          <a class="btn btn-outline" href="productos.html">Ver sabores 🍦</a>
-        </div>
-      </nav>
+      <h1 class="headline">
+        Tus días con <span>sabor a helado</span>
+      </h1>
+
+      <p class="subtext animate-soft">
+        Un helado hace cualquier momento mucho mejor, en especial si se comparte en familia o con amigos.
+      </p>
+
+      <a class="btn-soon"
+         href="https://www.instagram.com/sunday.funday01/"
+         target="_blank"
+         rel="noopener"
+         aria-label="Ir a Instagram de Sunday Funday">
+        Muy pronto
+      </a>
     </div>
-  </header>
-
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div>
-            <div class="kicker"><span class="dot"></span> Heladería artesanal • vibes de domingo todos los días</div>
-            <h1 class="h1">Haz de cualquier día un <span class="grad">Sunday Funday</span> ✨</h1>
-            <p class="lead">
-              Helados cremosos, frutas reales y combinaciones atrevidas. Una experiencia colorida, fresca y perfecta para compartir.
-            </p>
-
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="productos.html">Explorar productos 🍧</a>
-              <a class="btn btn-secondary" href="#contacto">Contactarnos 📲</a>
-            </div>
-
-            <p class="small" style="margin-top:12px;">
-              *Tip: aquí puedes poner tu ciudad o barrio cuando lo definas. Por ahora, deja el contacto principal.
-            </p>
-          </div>
-
-          <div class="hero-card">
-            <div class="hero-illustration" role="img" aria-label="Ilustración abstracta colorida tipo helado">
-              <div class="chip-row">
-                <span class="chip">Artesanal</span>
-                <span class="chip">Sabores de temporada</span>
-                <span class="chip">Toppings 🔥</span>
-                <span class="chip">Para compartir</span>
-              </div>
-            </div>
-            <div style="margin-top:12px;" class="small">
-              <strong style="color:var(--text);">Horario:</strong> (pon aquí tu horario) •
-              <strong style="color:var(--text);">Pedidos:</strong> WhatsApp/Instagram
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- VALUE CARDS -->
-    <section class="section">
-      <div class="container">
-        <h2>¿Qué hace diferente a Sunday Funday?</h2>
-        <p class="small">Una heladería pensada para que la gente sonría: sabores, textura y una estética que se nota.</p>
-
-        <div class="grid-3" style="margin-top:14px;">
-          <div class="card">
-            <div class="icon">🍓</div>
-            <h3>Ingredientes reales</h3>
-            <p>Frutas, cacao y bases bien hechas. Nada de “sabor a químico”.</p>
-          </div>
-
-          <div class="card">
-            <div class="icon">🎨</div>
-            <h3>Presentación colorida</h3>
-            <p>Copas, toppings y combinaciones que se ven tan bien como saben.</p>
-          </div>
-
-          <div class="card">
-            <div class="icon">⚡</div>
-            <h3>Rápido y fácil</h3>
-            <p>Ideal para antojos, planes en familia o para cerrar un buen día.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section" id="contacto">
-      <div class="container">
-        <h2>Contacto</h2>
-        <p class="small">Deja esto simple: un canal principal y uno alterno.</p>
-
-        <div class="contact-grid" style="margin-top:14px;">
-          <div class="card">
-            <h3>Escríbenos</h3>
-            <p class="small">Resolvemos pedidos, reservas y eventos.</p>
-
-            <ul class="list">
-              <li><span class="label">WhatsApp</span> <span>+57 3XX XXX XXXX</span></li>
-              <li><span class="label">Instagram</span> <span>@sundayfunday</span></li>
-              <li><span class="label">Email</span> <span>hola@sundayfunday.com.co</span></li>
-              <li><span class="label">Ubicación</span> <span>Bogotá (zona por definir)</span></li>
-            </ul>
-
-            <div class="notice">
-              Tip: cambia el WhatsApp e Instagram por los reales y listo.
-            </div>
-
-            <div class="hero-actions" style="margin-top:12px;">
-              <a class="btn btn-primary" href="productos.html">Ver productos</a>
-              <a class="btn btn-outline" href="https://www.instagram.com/" target="_blank" rel="noopener">Abrir Instagram</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>Eventos y celebraciones 🎉</h3>
-            <p class="small">
-              Si haces domicilios, activaciones o eventos, este bloque ayuda a convertir.
-            </p>
-
-            <ul class="list">
-              <li><span class="label">Cumpleaños</span> <span>Copas y combos</span></li>
-              <li><span class="label">Empresas</span> <span>Activaciones & catering</span></li>
-              <li><span class="label">Temporadas</span> <span>Sabores especiales</span></li>
-            </ul>
-
-            <div class="small" style="margin-top:12px;">
-              Puedes agregar un formulario más adelante. Por ahora, WhatsApp manda.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div>© <span id="year"></span> Sunday Funday</div>
-        <div class="small">Hecho con 🍦 + HTML/CSS</div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
