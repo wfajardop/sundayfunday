@@ -1,0 +1,225 @@
+:root{
+  /* Typography */
+  --font: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Brand colors (from your palette image - web approximation) */
+  --blackC: #000000;
+  --green375: #8CC400;
+  --yellow1225: #FFC233;
+  --orange165: #FF7A00;
+  --red185: #ED1C24;
+  --purple2593: #9C1F8F;
+  --blue2915: #00A9E0;
+
+  /* UI */
+  --bg: #ffffff;
+  --text: var(--blackC);
+  --muted: rgba(0,0,0,.65);
+  --shadow: 0 18px 34px rgba(0,0,0,.18);
+
+  /* Pattern control */
+  --pattern-opacity: 0.45;   /* súbelo a 0.25 si lo quieres más visible */
+  --pattern-size: 2000px;     /* baja a 320px para patrón más “denso” */
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body{
+  height: 100%;
+}
+
+body{
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background layers (pattern + soft gradients) */
+body::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+
+  /* Pattern image */
+  background-image: url("assets/pattern.png");
+  background-repeat: repeat;
+  background-size: var(--pattern-size);
+  background-position: center top;
+
+  /* Make pattern subtle */
+  opacity: var(--pattern-opacity);
+
+  /* Keeps it crisp */
+  image-rendering: auto;
+}
+
+body::after{
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  /* Soft brand gradients on top of pattern */
+  background:
+    radial-gradient(900px 600px at 15% 20%, rgba(140,196,0,.16), transparent 60%),
+    radial-gradient(900px 600px at 85% 80%, rgba(0,169,224,.16), transparent 60%),
+    radial-gradient(800px 520px at 70% 18%, rgba(255, 194, 51, .10), transparent 60%),
+    radial-gradient(800px 520px at 30% 85%, rgba(156, 31, 143, .08), transparent 60%);
+}
+
+/* Fullscreen hero layout */
+.hero{
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 52px 20px;
+}
+
+.content{
+  width: min(980px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+
+  /* Optional: glass panel to guarantee readability */
+  background: rgba(255,255,255,.72);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 28px;
+  padding: 28px 22px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.10);
+  backdrop-filter: blur(6px);
+}
+
+/* Bigger logo */
+.logo{
+  width: clamp(260px, 48vw, 560px);
+  max-width: 92vw;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 30px rgba(0,0,0,.12));
+  transform-origin: center;
+}
+
+/* Logo fade + scale */
+.animate-logo{
+  opacity: 0;
+  transform: scale(.96);
+  animation: logoIn 900ms cubic-bezier(.2,.9,.2,1) forwards;
+  animation-delay: 120ms;
+}
+
+@keyframes logoIn{
+  to{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Main headline */
+.headline{
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 200; /* Montserrat ExtraLight */
+  line-height: 1.05;
+  letter-spacing: -0.6px;
+  margin-top: 6px;
+}
+
+.headline span{
+  background: linear-gradient(
+    135deg,
+    var(--red185),
+    var(--orange165),
+    var(--yellow1225)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 400;
+}
+
+/* Supporting animated text */
+.subtext{
+  font-size: clamp(1.05rem, 2.1vw, 1.35rem);
+  line-height: 1.55;
+  font-weight: 300;
+  color: var(--muted);
+  max-width: 72ch;
+  padding: 0 6px;
+}
+
+/* Soft entrance animation for supporting text */
+.animate-soft{
+  opacity: 0;
+  transform: translateY(8px);
+  animation: softIn 900ms ease forwards;
+  animation-delay: 300ms;
+}
+
+@keyframes softIn{
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button: "Muy pronto" -> Instagram */
+.btn-soon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 20px;
+  border-radius: 18px;
+  font-family: var(--font);
+  font-weight: 400;
+  text-decoration: none;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--purple2593), var(--blue2915));
+  border: none;
+  box-shadow: var(--shadow);
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  user-select: none;
+}
+
+.btn-soon:hover{
+  transform: translateY(-2px);
+  filter: brightness(1.02);
+  box-shadow: 0 24px 42px rgba(0,0,0,.22);
+}
+
+.btn-soon:active{
+  transform: translateY(0);
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce){
+  .animate-logo,
+  .animate-soft{
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+  .btn-soon{
+    transition: none;
+  }
+}
+
+/* Small screens spacing tweaks */
+@media (max-width: 420px){
+  .content{
+    gap: 18px;
+    padding: 22px 16px;
+    border-radius: 22px;
+  }
+  .headline{
+    letter-spacing: -0.3px;
+  }
+}
